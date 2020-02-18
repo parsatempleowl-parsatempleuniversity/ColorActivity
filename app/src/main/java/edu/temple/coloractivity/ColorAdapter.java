@@ -5,29 +5,28 @@ import android.widget.BaseAdapter;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.ArrayList;
 
 
 public class ColorAdapter extends BaseAdapter {
 
-   ArrayList<String> arrayList;
+   String[] colors;
    Context context;
 
-   public ColorAdapter(Context context, ArrayList<String> arrayList) {
-       this.arrayList = arrayList;
+   public ColorAdapter(Context context, String[] colors) {
+       this.colors = colors;
        this.context = context;
    }
 
    @Override
    public int getCount() {
-       return arrayList.size();
+       return colors.length;
    }
 
    @Override
    public Object getItem(int position) {
-       return arrayList.get(position);
+       return colors[position];
    }
 
    @Override
@@ -39,7 +38,7 @@ public class ColorAdapter extends BaseAdapter {
     public View getView(int position, View view, ViewGroup viewGroup) {
        TextView textView = new TextView(context);
 
-       textView.setText(getItem(position).toString());
+       textView.setText(colors[position]);
 
        textView.setBackgroundColor(Color.WHITE);
 
@@ -53,8 +52,6 @@ public class ColorAdapter extends BaseAdapter {
         TextView textView;
 
         textView = (TextView) getView(position, convertView, parent);
-
-        textView.setText(getItem(position).toString());
 
         textView.setBackgroundColor(Color.parseColor(getItem(position).toString()));
 
