@@ -9,15 +9,21 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.content.Intent;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class MainActivity extends AppCompatActivity {
+
+
+public class PaletteActivity extends AppCompatActivity {
 
     View linearLayout;
-
     Spinner basicSpinner;
+    Intent intent;
+
+    boolean flag = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        String[] colors = {"red", "blue", "green", "black", "white", "gray", "cyan",
+        final String[] colors = {"red", "blue", "green", "black", "white", "gray", "cyan",
                             "magenta", "yellow", "lightgray", "darkgray", "grey",
                             "lightgrey", "darkgrey", "aqua", "fuchsia", "lime", "maroon",
                             "navy", "olive", "purple", "silver", "teal"};
@@ -37,10 +43,22 @@ public class MainActivity extends AppCompatActivity {
 
         basicSpinner.setAdapter(colorAdapter);
 
+
+
         basicSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                linearLayout.setBackgroundColor(Color.parseColor(parent.getItemAtPosition(position).toString()));
+
+                if (flag == true) {
+                    intent = new Intent(PaletteActivity.this, CanvasActivity.class);
+                    intent.putExtra("color", colors[position]);
+                    startActivity(intent);
+                }
+
+                flag = true;
+
             }
 
             @Override

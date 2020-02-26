@@ -5,16 +5,17 @@
     android:id="@+id/LinearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PaletteActivity">
+    android:orientation="vertical">
 
-    <Spinner
-        android:id="@+id/ColorSpinner"
-        android:layout_width="409dp"
+    <TextView
+        android:id="@+id/colorTextView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="74dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="633dp"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="354dp"
+        android:layout_marginEnd="176dp"
+        android:layout_marginBottom="358dp"
+        android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
