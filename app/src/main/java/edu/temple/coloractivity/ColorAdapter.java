@@ -1,6 +1,7 @@
 package edu.temple.coloractivity;
 
 import android.graphics.Color;
+import android.util.Log;
 import android.widget.BaseAdapter;
 import android.content.Context;
 import android.view.View;
@@ -13,9 +14,11 @@ public class ColorAdapter extends BaseAdapter {
 
    String[] colors;
    Context context;
+   String[] colors_in_english;
 
-   public ColorAdapter(Context context, String[] colors) {
+   public ColorAdapter(Context context, String[] colors, String[] colors_in_english) {
        this.colors = colors;
+       this.colors_in_english = colors_in_english;
        this.context = context;
    }
 
@@ -26,7 +29,7 @@ public class ColorAdapter extends BaseAdapter {
 
    @Override
    public Object getItem(int position) {
-       return colors[position];
+       return colors_in_english[position];
    }
 
    @Override
@@ -50,6 +53,9 @@ public class ColorAdapter extends BaseAdapter {
         super.getDropDownView(position, convertView, parent);
 
         TextView textView;
+
+        // Log.d("Selected Color", getItem(position).toString()); was used to debug the problem that I just fixed with the passing in of the
+        // colors_in_english string array
 
         textView = (TextView) getView(position, convertView, parent);
 

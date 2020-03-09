@@ -31,16 +31,16 @@ public class PaletteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Resources resources1 = getResources();
-        final String[] colors_in_english = resources1.getStringArray(R.array.colors);
+        final String[] colors = resources1.getStringArray(R.array.colors);
 
         Resources resources2 = getResources();
-        final String[] colors_in_spanish = resources2.getStringArray(R.array.colors);
+        final String[] colors_in_english = resources2.getStringArray(R.array.colors_in_english);
 
         linearLayout = findViewById(R.id.LinearLayout);
         basicSpinner = findViewById(R.id.ColorSpinner);
 
-        ColorAdapter colorEnglishAdapter = new ColorAdapter(this, colors_in_english);
-        basicSpinner.setAdapter(colorEnglishAdapter);
+        ColorAdapter colorAdapter = new ColorAdapter(this, colors, colors_in_english);
+        basicSpinner.setAdapter(colorAdapter);
 
         basicSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
