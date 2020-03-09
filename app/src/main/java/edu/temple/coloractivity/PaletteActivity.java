@@ -33,11 +33,6 @@ public class PaletteActivity extends AppCompatActivity {
         Resources res = getResources();
         final String[] colors = res.getStringArray(R.array.colors);
 
-        /* final String[] colors = {"red", "blue", "green", "black", "white", "gray", "cyan",
-                            "magenta", "yellow", "lightgray", "darkgray", "grey",
-                            "lightgrey", "darkgrey", "aqua", "fuchsia", "lime", "maroon",
-                            "navy", "olive", "purple", "silver", "teal"}; */
-
         linearLayout = findViewById(R.id.LinearLayout);
         basicSpinner = findViewById(R.id.ColorSpinner);
 
