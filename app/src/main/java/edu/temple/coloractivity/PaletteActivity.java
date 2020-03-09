@@ -30,17 +30,17 @@ public class PaletteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Resources res = getResources();
-        final String[] colors = res.getStringArray(R.array.colors);
+        Resources resources1 = getResources();
+        final String[] colors_in_english = resources1.getStringArray(R.array.colors);
+
+        Resources resources2 = getResources();
+        final String[] colors_in_spanish = resources2.getStringArray(R.array.colors);
 
         linearLayout = findViewById(R.id.LinearLayout);
         basicSpinner = findViewById(R.id.ColorSpinner);
 
-        ColorAdapter colorAdapter = new ColorAdapter(this, colors);
-
-        basicSpinner.setAdapter(colorAdapter);
-
-
+        ColorAdapter colorEnglishAdapter = new ColorAdapter(this, colors_in_english);
+        basicSpinner.setAdapter(colorEnglishAdapter);
 
         basicSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
@@ -50,7 +50,7 @@ public class PaletteActivity extends AppCompatActivity {
 
                 if (flag == true) {
                     intent = new Intent(PaletteActivity.this, CanvasActivity.class);
-                    intent.putExtra("color", colors[position]);
+                    intent.putExtra("color", colors_in_english[position]);
                     startActivity(intent);
                 }
 
