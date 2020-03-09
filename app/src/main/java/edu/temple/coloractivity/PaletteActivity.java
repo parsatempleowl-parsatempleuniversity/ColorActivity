@@ -2,6 +2,7 @@ package edu.temple.coloractivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -29,12 +30,13 @@ public class PaletteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Resources res = getResources();
+        final String[] colors = res.getStringArray(R.array.colors);
 
-
-        final String[] colors = {"red", "blue", "green", "black", "white", "gray", "cyan",
+        /* final String[] colors = {"red", "blue", "green", "black", "white", "gray", "cyan",
                             "magenta", "yellow", "lightgray", "darkgray", "grey",
                             "lightgrey", "darkgrey", "aqua", "fuchsia", "lime", "maroon",
-                            "navy", "olive", "purple", "silver", "teal"};
+                            "navy", "olive", "purple", "silver", "teal"}; */
 
         linearLayout = findViewById(R.id.LinearLayout);
         basicSpinner = findViewById(R.id.ColorSpinner);
