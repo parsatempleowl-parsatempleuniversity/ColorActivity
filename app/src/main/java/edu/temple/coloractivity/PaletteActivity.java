@@ -30,11 +30,9 @@ public class PaletteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Resources resources1 = getResources();
-        final String[] colors = resources1.getStringArray(R.array.colors);
-
-        Resources resources2 = getResources();
-        final String[] colors_in_english = resources2.getStringArray(R.array.colors_in_english);
+        Resources resources = getResources();
+        final String[] colors = resources.getStringArray(R.array.colors);
+        final String[] colors_in_english = resources.getStringArray(R.array.colors_in_english);
 
         linearLayout = findViewById(R.id.LinearLayout);
         basicSpinner = findViewById(R.id.ColorSpinner);
