@@ -1,22 +1,20 @@
 package edu.temple.coloractivity;
 
 import android.graphics.Color;
-import android.util.Log;
 import android.widget.BaseAdapter;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import java.util.ArrayList;
 
 
 public class ColorAdapter extends BaseAdapter {
 
-   String[] colors;
-   Context context;
-   String[] colors_in_english;
+   private String[] colors;
+   private Context context;
+   private String[] colors_in_english;
 
-   public ColorAdapter(Context context, String[] colors, String[] colors_in_english) {
+   ColorAdapter(Context context, String[] colors, String[] colors_in_english) {
        this.colors = colors;
        this.colors_in_english = colors_in_english;
        this.context = context;
@@ -24,7 +22,7 @@ public class ColorAdapter extends BaseAdapter {
 
    @Override
    public int getCount() {
-       return colors.length;
+       return colors_in_english.length;
    }
 
    @Override
@@ -34,7 +32,7 @@ public class ColorAdapter extends BaseAdapter {
 
    @Override
    public long getItemId(int position) {
-       return position;
+       return 0;
    }
 
     @Override
@@ -43,7 +41,7 @@ public class ColorAdapter extends BaseAdapter {
 
        textView.setText(colors[position]);
 
-       textView.setBackgroundColor(Color.WHITE);
+       textView.setBackgroundColor(Color.parseColor(getItem(position).toString());
 
        return textView;
     }
