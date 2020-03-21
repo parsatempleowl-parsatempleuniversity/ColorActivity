@@ -4,6 +4,8 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 public class MainActivity extends AppCompatActivity implements PaletteFragment.onFragmentInteractionListener {
     boolean twoPanes;
@@ -42,6 +44,12 @@ public class MainActivity extends AppCompatActivity implements PaletteFragment.o
     }
 
     private void loadFragment (int paneId, Fragment fragment, boolean placeOnBackStack) {
-
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction().replace(paneId, fragment);
+        if (placeOnBackStack) {
+            fragmentTransaction.addToBackStack(null);
+        }
+        fragmentTransaction.commit();
+        fragmentManager.executePendingTransactions();
     }
 }
