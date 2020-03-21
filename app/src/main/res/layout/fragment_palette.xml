@@ -4,4 +4,9 @@
     android:id="@+id/container1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PaletteFragment"/>
+    tools:context=".PaletteFragment">
+
+    <GridView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</FrameLayout>

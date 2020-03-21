@@ -20,7 +20,14 @@ public class ColorAdapter extends BaseAdapter {
        this.context = context;
    }
 
-   @Override
+    public ColorAdapter(Context context, String[] colors_in_english) {
+
+       this.context = context;
+       this.colors_in_english = colors_in_english;
+
+   }
+
+    @Override
    public int getCount() {
        return colors_in_english.length;
    }
