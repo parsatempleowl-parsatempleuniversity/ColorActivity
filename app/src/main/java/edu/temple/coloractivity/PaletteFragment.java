@@ -1,12 +1,8 @@
 package edu.temple.coloractivity;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
-import android.graphics.Color;
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,7 +17,7 @@ public class PaletteFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static PaletteFragment newInstance(String[] colors_in_english) {
+    public static PaletteFragment newInstance() {
         PaletteFragment fragment = new PaletteFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
