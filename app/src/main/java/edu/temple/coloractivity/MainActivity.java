@@ -29,6 +29,19 @@ public class MainActivity extends AppCompatActivity implements PaletteFragment.o
     @Override
     public void displayNewColor(String color) {
         Fragment canvasFragment;
-        
+        if (twoPanes) {
+            canvasFragment = getSupportFragmentManager().findFragmentById(R.id.container2);
+            assert canvasFragment != null;
+            ((CanvasFragment) canvasFragment).changeCanvasColor(color);
+        }
+        else {
+            canvasFragment = new CanvasFragment();
+            loadFragment(R.id.main_fragment, canvasFragment, true);
+            ((CanvasFragment) canvasFragment).changeCanvasColor(color);
+        }
+    }
+
+    private void loadFragment (int paneId, Fragment fragment, boolean placeOnBackStack) {
+
     }
 }

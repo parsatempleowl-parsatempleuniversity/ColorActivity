@@ -14,13 +14,13 @@ public class ColorAdapter extends BaseAdapter {
    private Context context;
    private String[] colors_in_english;
 
-   ColorAdapter(Context context, String[] colors, String[] colors_in_english) {
+    ColorAdapter(Context context, String[] colors, String[] colors_in_english) {
        this.colors = colors;
        this.colors_in_english = colors_in_english;
        this.context = context;
    }
 
-    public ColorAdapter(Context context, String[] colors_in_english) {
+    ColorAdapter(Context context, String[] colors_in_english) {
        this.context = context;
        this.colors_in_english = colors_in_english;
    }
