@@ -1,6 +1,7 @@
 package edu.temple.coloractivity;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,16 +9,22 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
 public class CanvasFragment extends Fragment {
+
+    FrameLayout canvasFragment;
 
     public CanvasFragment() {
         // Required empty public constructor
     }
 
-    public static CanvasFragment newInstance() {
+    public static CanvasFragment newInstance(String[] colors_in_english) {
         CanvasFragment fragment = new CanvasFragment();
         Bundle args = new Bundle();
+        for (int i = 0; i < colors_in_english.length; i++) {
+            args.putString(String.valueOf(colors_in_english[i]), colors_in_english[i]);
+        }
         fragment.setArguments(args);
         return fragment;
     }
@@ -46,11 +53,19 @@ public class CanvasFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_canvas, container, false);
+        View view = inflater.inflate(R.layout.fragment_canvas, container, false);
+        canvasFragment = (FrameLayout) view.findViewById(R.id.container2);
+        return view;
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+        view = null;
     }
+
+    public void changeCanvasColor(String color) {
+        canvasFragment.setBackgroundColor(Color.parseColor(color));
+    }
+
 }

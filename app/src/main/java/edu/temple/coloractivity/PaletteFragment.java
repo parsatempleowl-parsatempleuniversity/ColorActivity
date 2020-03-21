@@ -17,9 +17,12 @@ public class PaletteFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static PaletteFragment newInstance() {
+    public static PaletteFragment newInstance(String[] colors_in_english) {
         PaletteFragment fragment = new PaletteFragment();
         Bundle args = new Bundle();
+        for (int i = 0; i < colors_in_english.length; i++) {
+            args.putString(String.valueOf(colors_in_english[i]), colors_in_english[i]);
+        }
         fragment.setArguments(args);
         return fragment;
     }
