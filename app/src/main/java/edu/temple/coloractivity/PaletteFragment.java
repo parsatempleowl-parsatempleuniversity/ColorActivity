@@ -46,9 +46,9 @@ public class PaletteFragment extends Fragment {
         listener = null;
     }
 
-    @SuppressLint("MissingSuperCall")
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
     }
 
     @Override
