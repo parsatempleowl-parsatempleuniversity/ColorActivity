@@ -21,10 +21,8 @@ public class ColorAdapter extends BaseAdapter {
    }
 
     public ColorAdapter(Context context, String[] colors_in_english) {
-
        this.context = context;
        this.colors_in_english = colors_in_english;
-
    }
 
     @Override
