@@ -42,13 +42,15 @@ public class ColorAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View view, ViewGroup viewGroup) {
-       TextView textView = new TextView(context);
+       // TextView textView = new TextView(context);
 
-       textView.setText(colors[position]);
+       // textView.setText(colors[position]);
 
-       textView.setBackgroundColor(Color.parseColor(getItem(position).toString());
+        view = view.findViewById(R.id.container2);
 
-       return textView;
+       view.setBackgroundColor(Color.parseColor(getItem(position).toString());
+
+       return view;
     }
 
     @Override
