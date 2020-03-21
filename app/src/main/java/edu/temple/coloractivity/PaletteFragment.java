@@ -13,6 +13,8 @@ public class PaletteFragment extends Fragment {
 
     private onFragmentInteractionListener listener;
 
+    private View view;
+
     public PaletteFragment() {
         // Required empty public constructor
     }
@@ -59,7 +61,7 @@ public class PaletteFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_palette, container, false);
+        view =  inflater.inflate(R.layout.fragment_palette, container, false);
         GridView gridView = view.findViewById(R.id.container1);
         Context context = getActivity();
         String[] colors_in_english = getResources().getStringArray(R.array.colors_in_english);
@@ -77,6 +79,7 @@ public class PaletteFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+        view = null;
     }
 
     interface onFragmentInteractionListener {

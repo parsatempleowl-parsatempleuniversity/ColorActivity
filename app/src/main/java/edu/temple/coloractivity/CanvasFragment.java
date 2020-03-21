@@ -13,7 +13,8 @@ import android.widget.FrameLayout;
 
 public class CanvasFragment extends Fragment {
 
-    FrameLayout canvasFragment;
+    private FrameLayout canvasFragment;
+    private View view;
 
     public CanvasFragment() {
         // Required empty public constructor
@@ -53,7 +54,7 @@ public class CanvasFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_canvas, container, false);
+        view = inflater.inflate(R.layout.fragment_canvas, container, false);
         canvasFragment = (FrameLayout) view.findViewById(R.id.container2);
         return view;
     }
